@@ -76,15 +76,13 @@ body {
     width: 100%;
     max-width: 1100px;
     display: flex;
-    justify-content: center;
-
     
 
 }
 
 .cards_categoria{
 
-    width: 175px;
+    	width: 175px;
 	margin: 20px;
 	border-radius: 6px;
 	overflow: hidden;
@@ -98,8 +96,4 @@ body {
 
 .cards_categoria:hover{
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4)
-}
-
-.banner{
-    width: 100%;
 }
