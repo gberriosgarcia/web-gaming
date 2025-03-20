@@ -164,3 +164,31 @@ h3{
     text-align: center;
 }
 
+.atras{
+    border: 1px solid;
+    background: #ff6600;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mantiene el botón "Atrás" alineado a la izquierda */
+    position: relative; /* Permite posicionar el h3 de manera absoluta */
+    width: 52%;
+    padding: 10px;
+    
+}
+
+h3 {
+    position: absolute;  /* Lo saca del flujo normal y permite centrarlo */
+    left: 50%; 
+    top: 20%;          /* Mueve el punto de inicio del h3 al 50% de la pantalla */
+    transform: translateX(-50%); /* Lo ajusta para que quede completamente centrado */
+    margin: 0;
+}
