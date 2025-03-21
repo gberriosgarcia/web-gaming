@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    <link rel="stylesheet" href="estilos/style_login.css">
-    <script src="scripts/login.js"></script>
+    <link rel="stylesheet" href="../estilos/style_login.css">
+    <script src="../scripts/login.js"></script>
     
 
 </head>
@@ -13,39 +13,39 @@
 
      
 <div class="entero"> 
-  
+  <center>
+    <h2 class="REGISTRO">REGISTRO</h2>
+    <form>
+      <!-- <label class="nombre" for="nombre">Nombre</label> -->
+      <input type="text" id="nombre" required placeholder="Nombre">
 
-  <center><h2 class="REGISTRO">REGISTRO</h2>
-    
-   <label class="nombre" for="Nombre"></label>
-   <input type="text" id="nombre" required placeholder="Nombre">
+      <label class="Usuario" for="usuario"></label>
+      <input type="text" id="usuario" required placeholder="Usuario">
 
-   <label class="Usuario" for="Usuario"></label>
-   <input type="text" id="Usuario" required placeholder="Usuario">
+      <label class="Email" for="email"></label>
+      <input type="text" id="email" placeholder="E-mail">
 
-   <label class="Email" for="Email"></label>
-   <input type="text" id="Email" placeholder="E-mail">
+      <label class="nacimiento" for="nacimiento"></label>
+      <input type="text" id="nacimiento" required placeholder="Fecha de nacimiento">
 
-   <label class="nacimiento" for="nacimiento"></label>
-   <input type="text" id="nacimiento" required placeholder="fecha de naciemiento">
+      <label class="clave" for="clave"></label>
+      <input type="password" id="clave" required placeholder="Nueva clave"</input>
 
-   <label class="clave" for="nuevaclave"></label>
-   <input type="text" id="clave" required placeholder="Nueva clave"</input>
+      <label class="clave" for="reingreso_clave"></label>
+      <input type="password" id="reingreso_clave" required placeholder="Reingrese nueva clave"</input>
 
-   <label class="direccion" for="direccion"></label>
-   
-   <input type="text" id="direccion" required placeholder="Direccion"</input>
-
-
+      <label class="direccion" for="direccion"></label>
+      <input type="text" id="direccion" required placeholder="Direccion"</input>
+    </form>
  
-   <button class="boton1">Crear Usuario
-
+   <button class="boton1" onclick="guardarDatos()">Crear Usuario</button>
  
    <button class="boton2">Borrar</button>
+  </center>
 </div> 
 
 
-  </center>
+  
 
 </body>
 </html>
