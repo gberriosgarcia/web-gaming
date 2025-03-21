@@ -6,6 +6,25 @@ var clave = "";
 var reingreso_clave = "";
 var direccion = "";
 
+function mayorEdad(nacimiento){
+    let añoActual = new Date().getFullYear();
+    let año = new Date(nacimiento).getFullYear();
+    if ((añoActual-año)>=13){
+        console.log(nacimiento)}
+    else{alert("Contraseña invalida")};
+
+
+function verificarContraseña(clave){
+    let regex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,18}$/;
+    if (regex.test(clave)){
+        console.log("clave valida")
+    } else {
+        console.log("Clave inválida. Debe tener al menos una mayúscula, un número y entre 6 y 18 caracteres.");
+    }
+};
+
+        
+
 function validarVaciosNulos(campo){
     if(campo === null || campo.length === 0){
         alert("Campo vacio")
