@@ -192,3 +192,118 @@ h3 {
     transform: translateX(-50%); /* Lo ajusta para que quede completamente centrado */
     margin: 0;
 }
+
+.REGISTRO{
+    display: inline-block;  
+    background-color: purple;  
+    color: white;  
+    border: 2px solid white; 
+    padding: 5px 10px;  
+    border-radius: 20px;  
+    font-size: 20px;  
+    text-align: center;
+   
+   
+
+}
+
+.nombre{
+    
+    margin-bottom: 10px;
+    display: block;
+    margin-bottom: 8%;
+    width: 35%; 
+    margin: auto; 
+    padding: 10px;
+    background-color: #800080;
+    color: white; 
+    border: 5px solid black; 
+    border-radius: 15px; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    
+
+}
+
+
+.entero {
+    background-image: url('https://www.xtrafondos.com/wallpapers/maquinas-juegos-arcade-12476.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    border: 2px solid black;
+    
+}
+
+
+
+
+.Usuario{
+    
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.Email{
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.nacimiento{
+    margin-bottom: 10px;
+    display: block;
+    
+}
+
+.clave{
+    margin-bottom: 10px;
+    display: block;
+    
+    
+}
+
+.direccion{
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.boton1{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: purple;
+    cursor: pointer;
+    border-color: white;
+    border: solid white 2px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: white;
+   
+}
+
+.boton1:hover{
+   
+        background-color: #f39c12; 
+        border-color: #e74c3c;  
+        color: white;
+}
+
+.boton2{
+    margin-bottom: 10px;
+    background-color:purple;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    border: solid white 1px;
+    color: white;
+}
+.boton2:hover{
+   
+    background-color: #f39c12; 
+    border-color: #e74c3c;  
+    color: white;
+}
