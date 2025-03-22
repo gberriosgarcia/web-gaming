@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accion</title>
     <link rel="stylesheet" href="../estilos/styles.css">
-       
+    <script
+    src="https://kit.fontawesome.com/99d012dce5.js"
+    crossorigin="anonymous"
+  ></script> 
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-        <a href="index.html"><img src="img/—Pngtree—colorful video game console joystick_3570051.png" style="
+        <a href="../index.html"><img src="../img/—Pngtree—colorful video game console joystick_3570051.png" style="
             width: 100px;
             HEIGHT: 100px;
         "></a>
-        </div>
+        </div>  
         
         <ul class="menu">
             <li><a href="categorias.html">Categorías</a></li>
@@ -27,41 +30,61 @@
         <a href="../menu/login.html"><button class="login-btn">Login</button></a>
     </nav>
 
+     <br>
+     <br>
+
+     <div class="entero"> 
      
-<div class="entero"> 
-  <center>
-    <h2 class="REGISTRO">REGISTRO</h2>
-    <form>
-      <!-- <label class="nombre" for="nombre">Nombre</label> -->
-      <input type="text" id="nombre" required placeholder="Nombre">
-
-      <label class="Usuario" for="usuario"></label>
-      <input type="text" id="usuario" required placeholder="Usuario">
-
-      <label class="Email" for="email"></label>
-      <input type="text" id="email" placeholder="E-mail">
-
-      <label class="nacimiento" for="nacimiento"></label>
-      <input type="text" id="nacimiento" required placeholder="Fecha de nacimiento">
-
-      <label class="clave" for="clave"></label>
-      <input type="password" id="clave" required placeholder="Nueva clave"</input>
-
-      <label class="clave" for="reingreso_clave"></label>
-      <input type="password" id="reingreso_clave" required placeholder="Reingrese nueva clave"</input>
-
-      <label class="direccion" for="direccion"></label>
-      <input type="text" id="direccion" required placeholder="Direccion"</input>
-    </form>
- 
-   <button class="boton1" onclick="guardarDatos()">Crear Usuario</button>
- 
-   <button class="boton2">Borrar</button>
-  </center>
-</div> 
-
-
-  
+       
+        <form style="display: flex;align-content: center;align-items: center;flex-direction: column-reverse;margin-top: 10%;">
+         
+          <div class="input_div">
+            <h2 class="REGISTRO">REGISTRO</h2>
+            
+            <div class="log_input">
+              <input class="estilo_imput" type="text" id="nombre" required placeholder="Nombre *">
+              <i class="fa-solid fa-circle-user log__inputIcon"></i>
+            </div>
+          
+          <div class= "log_input">
+            <input class="estilo_imput" type="text" id="usuario" required placeholder="Usuario *">
+            <i class="fa-solid fa-user log__inputIcon"></i>
+          </div>
+    
+          <div class="log_input">
+            <input class="estilo_imput" type="text" id="email" placeholder="E-mail *">
+            <i class="fa-solid fa-envelope log__inputIcon"></i>
+          </div>
+    
+          <div class="log_input"> 
+            <input class="estilo_imput" type="text" id="nacimiento" required placeholder="Fecha de nacimiento *">
+            <i class="fa-duotone fa-solid fa-baby-carriage log__inputIcon"></i>
+          </div>
+    
+          <div class="log_input">
+            <input class="estilo_imput" type="password" id="clave" required placeholder="Nueva clave *">
+            <i class="fa-solid fa-eye log__inputIcon log__inputPasswordIcon log__inputIcon"></i>
+          </div>
+    
+          <div class="log_input">
+            <input class="estilo_imput" type="password" id="reingreso_clave" required placeholder="Reingrese nueva clave *">
+            <i class="fa-solid fa-eye log__inputIcon log__inputPasswordIcon log__inputIcon"></i>
+          </div>
+    
+          <div class="log_input">
+            <label class="direccion" for="direccion"></label>
+            <input class="estilo_imput" type="text" id="direccion" required placeholder="Direccion">
+            <i class="fa-duotone fa-solid fa-house log__inputIcon"></i>
+          </div>
+   
+       
+          <div class= "div_button"> 
+            <button class="boton" onclick="guardarDatos()">Crear Usuario</button>
+            <button class="boton2">Borrar</button>
+          </div>    
+      
+      </div>
+      </form>
 
 </body>
 </html>

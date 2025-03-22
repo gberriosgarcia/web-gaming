@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +19,9 @@ body {
     background: #333;
     padding: 15px 20px;
     border-radius: 85px;
-}
+    margin-bottom: 30px;
+}   
+
 .logo {
     color: white;
     font-size: 20px;
@@ -194,15 +198,13 @@ h3 {
 }
 
 .REGISTRO{
-    display: inline-block;  
-    background-color: purple;  
+    display: inline-block;    
     color: white;  
-    border: 2px solid white; 
     padding: 5px 10px;  
     border-radius: 20px;  
     font-size: 20px;  
     text-align: center;
-   
+    margin: 10px;
    
 
 }
@@ -226,23 +228,21 @@ h3 {
 
 
 .entero {
-    background-image: url('https://www.xtrafondos.com/wallpapers/maquinas-juegos-arcade-12476.jpg'); 
+    background-image: url('https://www.xtrafondos.com/wallpapers/maquinas-juegos-arcade-12476.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    height: 100vh; 
+    height: 800px;
     border: 2px solid black;
-    
+    width: 80%;
+
 }
 
 
-
-
-.Usuario{
+.Usuario {
     
     margin-bottom: 10px;
-    display: block;
-
+    display:block;
 }
 
 .Email{
@@ -270,11 +270,8 @@ h3 {
 
 }
 
-.boton1{
+.boton{
     display: block;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-right: 10px;
     background-color: purple;
     cursor: pointer;
     border-color: white;
@@ -282,10 +279,12 @@ h3 {
     border-radius: 50px;
     font-size: 16px;
     color: white;
-   
+    margin: 20px;
+    height: 40px;
+    width: 120px;
 }
 
-.boton1:hover{
+.boton:hover{
    
         background-color: #f39c12; 
         border-color: #e74c3c;  
@@ -300,6 +299,9 @@ h3 {
     font-size: 16px;
     border: solid white 1px;
     color: white;
+    height: 40px;
+    width: 120px;
+   
 }
 .boton2:hover{
    
@@ -307,3 +309,52 @@ h3 {
     border-color: #e74c3c;  
     color: white;
 }
+
+
+.log_input{
+    width: 252px;
+    height: 47px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.input_div{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px white solid;
+  width: 30%;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(2rem);
+
+}
+.estilo_imput{
+
+    width: 121%;
+    padding: 0.9rem 1rem;
+    background-color: transparent;
+    border-radius: 2rem;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.7px;
+   
+    height: 20px;
+}
+
+.div_button{
+    display: flex;
+  
+  align-items: baseline;
+}
+
+.log__inputIcon {
+    width: 25px;
+    position: relative;
+    right: -8.2rem;
+    top: -38%;
+    transform: translateY(-35%);
+    color: white;
+  }
