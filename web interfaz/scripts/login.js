@@ -5,9 +5,9 @@ window.onload = function() {
 function verificarEdad(nacimiento){
     let añoActual = new Date().getFullYear();
     let año = new Date(nacimiento).getFullYear();
-    if ((añoActual-año)>=13){
-        console.log(nacimiento)}
-    else{alert("Debes tener al menos 13 años para registrarte en el sitio.")}
+    if ((añoActual-año)<13){
+        alert("Debes tener al menos 13 años para registrarte en el sitio.")
+    };
 };
 
 function verificarContraseña(clave, reingreso_clave){
@@ -48,5 +48,4 @@ function guardarDatos(){
     verificarEdad(nacimiento.value);
     verificarEmail(email.value);
     verificarContraseña(clave.value, reingreso_clave.value);
-    console.log("fin")
 };
