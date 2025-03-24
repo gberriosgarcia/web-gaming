@@ -37,7 +37,16 @@ function validarVaciosNulos(){
     }
 };
 
+function verificarEmail(email) {
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(email)){
+        alert("El formato del e-mail no es válido.");
+    };
+ }
+
 function guardarDatos(){
     verificarEdad(nacimiento.value);
+    verificarEmail(email.value);
     verificarContraseña(clave.value, reingreso_clave.value);
+    console.log("fin")
 };
