@@ -2,12 +2,12 @@ window.onload = function() {
     document.getElementById('btnGuardarDatos').setAttribute("disabled","disabled");
 };
 
-function mayorEdad(nacimiento){
+function verificarEdad(nacimiento){
     let añoActual = new Date().getFullYear();
     let año = new Date(nacimiento).getFullYear();
     if ((añoActual-año)>=13){
         console.log(nacimiento)}
-    else{alert("Contraseña invalida")}
+    else{alert("Debes tener al menos 13 años para registrarte en el sitio.")}
 };
 
 function verificarContraseña(clave, reingreso_clave){
@@ -38,6 +38,6 @@ function validarVaciosNulos(){
 };
 
 function guardarDatos(){
-    verificarContraseña(clave.value, reingreso_clave.value)
-    
+    verificarEdad(nacimiento.value);
+    verificarContraseña(clave.value, reingreso_clave.value);
 };
