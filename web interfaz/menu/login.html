@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accion</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../estilos/styles.css">
-    <script
-    src="https://kit.fontawesome.com/99d012dce5.js"
-    crossorigin="anonymous"
-  ></script> 
+    <script src="https://kit.fontawesome.com/99d012dce5.js" crossorigin="anonymous"></script> 
+    <script src="../scripts/login.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -20,7 +18,7 @@
         </div>  
         
         <ul class="menu">
-            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="../menu/categorias.html">Categorías</a></li>
             <li><a href="#">Juegos</a></li>
             <li><a href="#">Tiendas</a></li>
         </ul>
@@ -42,44 +40,44 @@
             <h2 class="REGISTRO">REGISTRO</h2>
             
             <div class="log_input">
-              <input class="estilo_imput" type="text" id="nombre" required placeholder="Nombre *">
+              <input class="estilo_imput" type="text" id="nombre" onchange="validarVaciosNulos()" required placeholder="Nombre *">
               <i class="fa-solid fa-circle-user log__inputIcon"></i>
             </div>
           
           <div class= "log_input">
-            <input class="estilo_imput" type="text" id="usuario" required placeholder="Usuario *">
+            <input class="estilo_imput" type="text" id="usuario" onchange="validarVaciosNulos()" required placeholder="Usuario *">
             <i class="fa-solid fa-user log__inputIcon"></i>
           </div>
     
           <div class="log_input">
-            <input class="estilo_imput" type="text" id="email" placeholder="E-mail *">
+            <input class="estilo_imput" type="text" id="email" onchange="validarVaciosNulos()" required placeholder="E-mail *">
             <i class="fa-solid fa-envelope log__inputIcon"></i>
           </div>
     
           <div class="log_input"> 
-            <input class="estilo_imput" type="text" id="nacimiento" required placeholder="Fecha de nacimiento *">
+            <input class="estilo_imput" type="date" id="nacimiento" required placeholder="Fecha de nacimiento *">
             <i class="fa-duotone fa-solid fa-baby-carriage log__inputIcon"></i>
           </div>
     
           <div class="log_input">
-            <input class="estilo_imput" type="password" id="clave" required placeholder="Nueva clave *">
+            <input class="estilo_imput" type="password" id="clave" onchange="validarVaciosNulos()" required placeholder="Nueva clave *">
             <i class="fa-solid fa-eye log__inputIcon log__inputPasswordIcon log__inputIcon"></i>
           </div>
     
           <div class="log_input">
-            <input class="estilo_imput" type="password" id="reingreso_clave" required placeholder="Reingrese nueva clave *">
+            <input class="estilo_imput" type="password" id="reingreso_clave" onchange="validarVaciosNulos()" required placeholder="Reingrese nueva clave *">
             <i class="fa-solid fa-eye log__inputIcon log__inputPasswordIcon log__inputIcon"></i>
           </div>
     
           <div class="log_input">
             <label class="direccion" for="direccion"></label>
-            <input class="estilo_imput" type="text" id="direccion" required placeholder="Direccion">
+            <input class="estilo_imput" type="text" id="direccion" placeholder="Direccion">
             <i class="fa-duotone fa-solid fa-house log__inputIcon"></i>
           </div>
    
        
           <div class= "div_button"> 
-            <button class="boton" onclick="guardarDatos()">Crear Usuario</button>
+            <button class="boton" onclick="guardarDatos()" id="btnGuardarDatos">Crear Usuario</button>
             <button class="boton2">Borrar</button>
           </div>    
       
