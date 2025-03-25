@@ -49,3 +49,7 @@ function guardarDatos(){
     verificarEmail(email.value);
     verificarContraseña(clave.value, reingreso_clave.value);
 };
+
+function borrarDatosFormulario(){
+    document.getElementById("formRegistro").reset();
+}
