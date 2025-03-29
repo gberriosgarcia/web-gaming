@@ -416,6 +416,9 @@ h3 {
     font-size: 12px;
     display: flex;
     align-items: center;
+    width: 65px;
+    height: 40px;
+    justify-content: center;
 }
 
 /* Ajuste de la barra de navegación */
@@ -631,5 +634,42 @@ a:hover {
     .section-products .container {
         padding-left: 10px;
         padding-right: 10px;
+    }
+}
+
+.product-old-price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Centrado en la fila */
+.section-products .row {
+    display: flex;
+    justify-content: center; /* Centra los productos */
+    align-items: center;
+}
+
+/* Cada producto se debe centrar dentro de su contenedor */
+.single-product {
+    margin: 10px;
+    text-align: center;
+}
+
+/* Aseguramos que la imagen y los contenidos no desborden */
+.single-product img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsividad: asegúrate que en pantallas pequeñas los productos se centren */
+@media (max-width: 390px) {
+    .section-products .row {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+    .single-product {
+        max-width: 90%;
+        margin: 10px;
     }
 }
