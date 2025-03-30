@@ -486,7 +486,21 @@ a:hover {
     margin-bottom: 26px;
 }
 
+.section-products2 .single-product {
+    margin-bottom: 26px;
+}
+
 .section-products .single-product .part-1 {
+    position: absolute;
+    height: 290px;
+    max-height: 290px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 15rem;
+    margin-top: 99px;
+}
+
+.section-products .single-product2 .part-1 {
     position: absolute;
     height: 290px;
     max-height: 290px;
@@ -507,8 +521,23 @@ a:hover {
 		transition: all 0.3s;
 }
 
+.section-products .single-product2 .part-1::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
 .section-products .single-product:hover .part-1::before {
 		transform: scale(1.2,1.2) rotate(5deg);
+}
+
+.section-products .single-product2:hover .part-1::before {
+    transform: scale(1.2,1.2) rotate(5deg);
 }
 
 .section-products #product-1 .part-1::before {
@@ -544,7 +573,27 @@ a:hover {
     font-size: 0.85rem;
 }
 
+.section-products .single-product2 .part-1 .discount,
+.section-products .single-product2 .part-1 .new {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #ffffff;
+    background-color: #fe302f;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+
+
+
 .section-products .single-product .part-1 .new {
+    left: 0;
+    background-color: #444444;
+}
+
+.section-products .single-product2 .part-1 .new {
     left: 0;
     background-color: #444444;
 }
@@ -560,12 +609,33 @@ a:hover {
     transition: bottom 0.5s, opacity 0.5s;
 }
 
+.section-products .single-product2 .part-1 ul {
+    position: absolute;
+    bottom: -41px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
 .section-products .single-product:hover .part-1 ul {
     bottom: 30px;
     opacity: 1;
 }
 
+.section-products .single-product2:hover .part-1 ul {
+    bottom: 30px;
+    opacity: 1;
+}
+
 .section-products .single-product .part-1 ul li {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.section-products .single-product2 .part-1 ul li {
     display: inline-block;
     margin-right: 4px;
 }
@@ -582,7 +652,23 @@ a:hover {
     transition: color 0.2s;
 }
 
+.section-products .single-product2 .part-1 ul li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff;
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+    transition: color 0.2s;
+}
+
 .section-products .single-product .part-1 ul li a:hover {
+    color: #fe302f;
+}
+
+.section-products .single-product2 .part-1 ul li a:hover {
     color: #fe302f;
 }
 
@@ -591,7 +677,18 @@ a:hover {
     margin-top: 24px;
 }
 
+.section-products .single-product2 .part-2 .product-title {
+    font-size: 1.5rem;
+    margin-top: 24px;
+}
+
+
 .section-products .single-product .part-2 h4 {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.section-products .single-product2 .part-2 h4 {
     display: inline-block;
     font-size: 1rem;
 }
@@ -603,7 +700,25 @@ a:hover {
     opacity: 0.6;
 }
 
+.section-products .single-product2 .part-2 .product-old-price {
+    position: relative;
+    padding: 0 7px;
+    margin-right: 2px;
+    opacity: 0.6;
+}
+
 .section-products .single-product .part-2 .product-old-price::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #444444;
+    transform: translateY(-50%);
+}
+
+.section-products .single-product2 .part-2 .product-old-price::after {
     position: absolute;
     content: "";
     top: 50%;
@@ -627,6 +742,10 @@ a:hover {
 
 /* Estilo para que cada producto tenga un espacio adecuado */
 .single-product {
+    margin: 10px;
+}
+
+.single-product2 {
     margin: 10px;
 }
 
@@ -656,6 +775,16 @@ a:hover {
     text-align: center;
 }
 
+.single-product2 {
+    margin: 10px;
+    text-align: center;
+}
+
+.single-product2 {
+    margin: 10px;
+    text-align: center;
+}
+
 /* Aseguramos que la imagen y los contenidos no desborden */
 .single-product img {
     max-width: 100%;
@@ -672,6 +801,19 @@ a:hover {
     transform: scale(1.1);
     z-index: 2;
 }
+
+.single-product2 img {
+    max-width: 100%;
+    height: auto;
+    transition: 0.5s;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 100ms ease;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+
 
 /* Responsividad: asegúrate que en pantallas pequeñas los productos se centren */
 @media (max-width: 390px) {
