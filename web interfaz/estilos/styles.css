@@ -587,7 +587,8 @@ a:hover {
 }
 
 .section-products .single-product .part-2 .product-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-top: 24px;
 }
 
 .section-products .single-product .part-2 h4 {
@@ -659,6 +660,17 @@ a:hover {
 .single-product img {
     max-width: 100%;
     height: auto;
+    transition: 0.5s;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 100ms ease;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+.single-product img:hover {
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 /* Responsividad: asegúrate que en pantallas pequeñas los productos se centren */
