@@ -17,6 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from core.views import index, registro, login, cerrar_sesion, categorias, terror
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
+    path('registro/', registro, name="registro"),
+    # path('cuenta/', cuenta, name="cuenta"),
+    path('login/', login, name='login'),
+    path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
+    path('categorias/', categorias, name='categorias'),
+    path('categorias/terror', terror, name='terror'),
+
 ]
