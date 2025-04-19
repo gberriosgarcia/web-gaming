@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'todo_juegos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'bdcloud_high', # MODIFICAR         
+        'USER': 'todojuegos_user', # AGREGA TU USER Y PASS
+        'PASSWORD': 'TodoJuegosUserDB1234', # AGREGA TU USER Y PASS
+        'HOST': '',
+        'PORT': '',
     }
 }
 
