@@ -35,6 +35,10 @@ def cerrar_sesion(request):
 def terror(request):
     return render(request, 'categorias/terror.html')
 
+# @login_required(login_url='login')
+def accion(request):
+    return render(request, 'categorias/accion.html')
+
 # Juegos de Terror
 
 # @login_required(login_url='login')
@@ -48,3 +52,17 @@ def outlast(request):
 # @login_required(login_url='login')
 def resident_evil(request):
     return render(request, 'preview_juegos/preview_rev6.html')
+
+# Juegos de Accion
+
+# @login_required(login_url='login')
+def helldivers(request):
+    return render(request, 'preview_juegos/preview_hd.html')
+
+# @login_required(login_url='login')
+def split_fiction(request):
+    return render(request, 'preview_juegos/preview_sf.html')
+
+# @login_required(login_url='login')
+def elden_ring(request):
+    return render(request, 'preview_juegos/preview_er.html')
