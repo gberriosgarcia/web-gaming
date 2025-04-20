@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -74,14 +75,7 @@ WSGI_APPLICATION = 'todo_juegos.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'bdcloud_high', # MODIFICAR         
-        'USER': 'todojuegos_user', # AGREGA TU USER Y PASS
-        'PASSWORD': 'TodoJuegosUserDB1234', # AGREGA TU USER Y PASS
-        'HOST': '',
-        'PORT': '',
-    }
+  
 }
 
 

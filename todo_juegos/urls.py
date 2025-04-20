@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, login, cerrar_sesion, categorias, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring
+from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted
 
 
 urlpatterns = [
@@ -32,6 +32,11 @@ urlpatterns = [
     # Categorias
     path('categorias/terror', terror, name='terror'),
     path('categorias/accion', accion, name='accion'),
+    
+    path('categorias/mundo_abierto', mundo_abierto, name='mundo_abierto'),
+    path('categorias/carreras', carreras, name='carreras'),
+    path('categorias/supervivencia', supervivencia, name='supervivencia'),
+    path('categorias/deportes', deportes, name='deportes'),
 
     # Juegos de terror
     path('categorias/terror/resident_evil_village', resident_evil_village, name='resident_evil_village'),
@@ -42,5 +47,16 @@ urlpatterns = [
     path('categorias/accion/helldivers', helldivers, name='helldivers'),
     path('categorias/accion/split_fiction', split_fiction, name='split_fiction'),
     path('categorias/accion/elden_ring', elden_ring, name='elden_ring'),
+    
+    
+    # Juegos de mundo abierto
+    path('categorias/mundo_abierto/ark', ark, name='ark'),
+    path('categorias/mundo_abierto/gta', gta, name='gta'),
+    path('categorias/mundo_abierto/monster_hunter', monster_hunter, name='monster_hunter'),
+
+    # Juegos de mundo carreras
+    path('categorias/carreras/ndfs', ndfs, name='ndfs'),
+    path('categorias/carreras/most_wanted', most_wanted, name='most_wanted'),
+    path('categorias/carreras/f124', f124, name='f124'),
 
 ]

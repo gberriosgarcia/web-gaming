@@ -41,6 +41,17 @@ def supervivencia(request):
 def deportes(request):
     return render(request, 'categorias/deportes.html')
 
+def accion(request):
+    return render(request, 'categorias/accion.html')
+
+def mundo_abierto(request):
+    return render(request, 'categorias/mundo_abierto.html')
+
+def carreras(request):
+    return render(request, 'categorias/carreras.html')
+
+
+
 # Juegos de Terror
 
 # @login_required(login_url='login')
@@ -55,3 +66,32 @@ def outlast(request):
 def resident_evil(request):
     return render(request, 'preview_juegos/preview_rev6.html')
 
+
+def helldivers(request):
+    return render(request, 'preview_juegos/preview_hd.html')
+
+def split_fiction(request):
+    return render(request, 'preview_juegos/preview_sf.html')
+
+def elden_ring(request):
+    return render(request, 'preview_juegos/preview_er.html')
+
+#juegos de mundo abrido xd
+def ark(request):
+    return render(request, 'preview_juegos/preview_ark.html')
+
+def gta(request):
+    return render(request, 'preview_juegos/preview_gta.html')
+
+def monster_hunter(request):
+    return render(request, 'preview_juegos/preview_mh.html')
+
+#juegos de carreas
+def ndfs(request):
+    return render(request, 'preview_juegos/preview_ndfs.html')
+
+def most_wanted(request):
+    return render(request, 'preview_juegos/preview_nfsmw.html')
+
+def f124(request):
+    return render(request, 'preview_juegos/preview_f21.html')

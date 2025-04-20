@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,15 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <!-- Tu CSS personalizado -->
-    <link rel="stylesheet" href="../estilos/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <!-- Navbar con Bootstrap y menú lateral -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container"> <!-- Contenedor centrado -->
             <!-- Logo y texto de la marca -->
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../img/—Pngtree—colorful video game console joystick_3570051.png" alt="Logo" style="max-width: 40px; height: auto;">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+                <img src="{% static 'img/—Pngtree—colorful video game console joystick_3570051.png' %}" alt="Logo" style="max-width: 40px; height: auto;">
                 <span class="ms-2 fw-bold text-light">TodoJuegos.com</span>
             </a>
     
@@ -25,16 +26,16 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+            
             <!-- Menú visible en pantallas medianas y grandes -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav text-center">
-                    <li class="nav-item"><a class="nav-link text-light" href="../menu/categorias.html">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{% url 'categorias' %}">Categorías</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#">Juegos</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#">Tiendas</a></li>
                     <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
                     <li class="nav-item">
-                        <a href="../menu/login.html" class="btn btn-warning ms-2">Login</a>
+                        <a href="{% url 'login' %}" class="btn btn-warning ms-2">Login</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +50,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../menu/categorias.html">Categorías</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Tiendas</a></li>
             </ul>
@@ -57,7 +58,7 @@
             <!-- Barra de búsqueda -->
             <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Buscar...">
-                <a href="/menu/login.html" class="btn btn-warning">Login</a>
+                <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
             </form>
         </div>
     </div>
@@ -82,12 +83,12 @@
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="../preview_juegos/preview_ark.html"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="{% url 'ark' %}"><i class="fas fa-plus"></i></a></li>
                                 
                             </ul>
                         </div>
                         <div class="part-2">
-                            <a href="../preview_juegos/preview_ark.html"><img src="../img/img3.jpg" alt="Producto 1" class="img-fluid" /></a>
+                            <a href="{% url 'ark' %}"><img src="{% static 'img/img3.jpg' %}" alt="Producto 1" class="img-fluid" /></a>
                             <h4 class="product-title">ARK Surivival Ascended</h4>
                             <h4 class="product-old-price">$59.999</h4>
                             <h4 class="product-price">$37.000
@@ -104,11 +105,11 @@
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="../preview_juegos/preview_gta.html"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="{% url 'gta' %}"><i class="fas fa-plus"></i></a></li>
                             </ul>
                         </div>
                         <div class="part-2">
-                            <a href="../preview_juegos/preview_gta.html"><img src="../img/gta.jpeg" alt="Producto 1" class="img-fluid" /></a>
+                            <a href="{% url 'gta' %}"><img src="{% static 'img/gta.jpeg' %}" alt="Producto 1" class="img-fluid" /></a>
                             <h4 class="product-title">GTA V      </h4>
                             <h4 class="product-old-price">$55.000</h4>
                             <br>
@@ -124,11 +125,11 @@
                             <ul>
                                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="../preview_juegos/preview_mh.html"><i class="fas fa-plus"></i></a></li>
+                                <li><a href="{% url 'monster_hunter' %}"><i class="fas fa-plus"></i></a></li>
                             </ul>
                         </div>
                         <div class="part-2">
-                            <a href="../preview_juegos/preview_mh.html"><img src="../img/mh.jpg" alt="Producto 1" class="img-fluid" /></a>
+                            <a href="{% url 'monster_hunter' %}"><img src="{% static 'img/mh.jpg' %}" alt="Producto 1" class="img-fluid" /></a>
                             <h4 class="product-title">Monster Hunter Wilds</h4>
                             <h4 class="product-old-price">$54.000</h4>
                             <h4 class="product-price">$40.000</h4>
