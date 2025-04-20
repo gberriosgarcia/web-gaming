@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted
+from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass
 
 
 urlpatterns = [
@@ -28,6 +28,9 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
     path('categorias/', categorias, name='categorias'),
+    
+    path('reinicio_pass/', reinicio_pass, name='reinicio_pass'),
+    
 
     # Categorias
     path('categorias/terror', terror, name='terror'),

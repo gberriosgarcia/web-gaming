@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,12 +27,12 @@
     </style>
 </head>
 <body>
-   <!-- Navbar con Bootstrap y menú lateral -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar con Bootstrap y menú lateral -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container"> <!-- Contenedor centrado -->
         <!-- Logo y texto de la marca -->
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-            <img src="../img/—Pngtree—colorful video game console joystick_3570051.png" alt="Logo" style="max-width: 40px; height: auto;">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+            <img src="{% static 'img/—Pngtree—colorful video game console joystick_3570051.png' %}" alt="Logo" style="max-width: 40px; height: auto;">
             <span class="ms-2 fw-bold text-light">TodoJuegos.com</span>
         </a>
 
@@ -43,12 +44,12 @@
         <!-- Menú visible en pantallas medianas y grandes -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav text-center">
-                <li class="nav-item"><a class="nav-link text-light" href="../menu/categorias.html">Categorías</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="#">Juegos</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="#">Tiendas</a></li>
                 <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
                 <li class="nav-item">
-                    <a href="../menu/login.html" class="btn btn-warning ms-2">Login</a>
+                    <a href="{% url 'login' %}" class="btn btn-warning ms-2">Login</a>
                 </li>
             </ul>
         </div>
@@ -63,7 +64,7 @@
     </div>
     <div class="offcanvas-body">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="/">Categorías</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'categorias' %}">Categorías</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Tiendas</a></li>
         </ul>
@@ -71,7 +72,7 @@
         <!-- Barra de búsqueda -->
         <form class="d-flex mt-3">
             <input class="form-control me-2" type="search" placeholder="Buscar...">
-            <a href="../menu/login.html" class="btn btn-warning">Login</a>
+            <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
         </form>
     </div>
 </div>
@@ -149,7 +150,7 @@
                    </div>
                     <button class="btn btn-primary w-100" onclick="borrarDatosFormulario()">Borrar </button>
                 </form>
-                <p class="mt-4 text-center text-secondary">¿Ya tienes cuenta? <a href="../menu/login.html" class="link-primary text-decoration-none">Inicia sesión</a></p>
+                <p class="mt-4 text-center text-secondary">¿Ya tienes cuenta? <a href="{% url 'login' %}" class="link-primary text-decoration-none">Inicia sesión</a></p>
             </div>
         </div>
     </div>

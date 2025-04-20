@@ -50,6 +50,9 @@ def mundo_abierto(request):
 def carreras(request):
     return render(request, 'categorias/carreras.html')
 
+def reinicio_pass(request):
+    return render(request, 'menu/reinicio_pass.html')
+
 
 
 # Juegos de Terror
