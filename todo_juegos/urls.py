@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, login, cerrar_sesion, categorias, terror
+from core.views import index, registro, login, cerrar_sesion, categorias, terror, supervivencia, deportes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,7 @@ urlpatterns = [
     path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
     path('categorias/', categorias, name='categorias'),
     path('categorias/terror', terror, name='terror'),
+    path('categorias/supervivencia', terror, name='supervivencia'),
+    path('categorias/deportes', terror, name='deportes'),
 
 ]

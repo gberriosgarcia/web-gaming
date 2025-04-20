@@ -22,3 +22,9 @@ def cerrar_sesion(request):
 # @login_required(login_url='login')
 def terror(request):
     return render(request, 'categorias/terror.html')
+
+def supervivencia(request):
+    return render(request, 'categorias/supervivencia.html')
+
+def deportes(request):
+    return render(request, 'categorias/deportes.html')
