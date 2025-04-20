@@ -34,3 +34,17 @@ def cerrar_sesion(request):
 # @login_required(login_url='login')
 def terror(request):
     return render(request, 'categorias/terror.html')
+
+# Juegos de Terror
+
+# @login_required(login_url='login')
+def resident_evil_village(request):
+    return render(request, 'preview_juegos/preview_rv.html')
+
+# @login_required(login_url='login')
+def outlast(request):
+    return render(request, 'preview_juegos/preview_ol.html')
+
+# @login_required(login_url='login')
+def resident_evil(request):
+    return render(request, 'preview_juegos/preview_rev6.html')
