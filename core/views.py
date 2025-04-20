@@ -24,8 +24,8 @@ def login(request):
             login(request, user)
             return redirect('/') 
         else:
-            return render(request, 'login.html', {'error': 'Credenciales incorrectas'})
-    return render(request, 'login.html')
+            return render(request, 'menu/login.html', {'error': 'Credenciales incorrectas'})
+    return render(request, 'menu/login.html')
 
 def cerrar_sesion(request):
     logout(request)
