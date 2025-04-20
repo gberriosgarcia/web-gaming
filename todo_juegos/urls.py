@@ -17,11 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-<<<<<<< HEAD
-from core.views import index, registro, login, cerrar_sesion, categorias, terror, supervivencia, deportes
-=======
-from core.views import index, registro, login, cerrar_sesion, categorias, terror, resident_evil_village, outlast, resident_evil
->>>>>>> 22b564f76ca3bf71d0ab5a668bace2acacc871e4
+from core.views import index, registro, login, cerrar_sesion, categorias, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,13 +28,19 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
     path('categorias/', categorias, name='categorias'),
+
+    # Categorias
     path('categorias/terror', terror, name='terror'),
-    path('categorias/supervivencia', terror, name='supervivencia'),
-    path('categorias/deportes', terror, name='deportes'),
+    path('categorias/accion', accion, name='accion'),
 
     # Juegos de terror
     path('categorias/terror/resident_evil_village', resident_evil_village, name='resident_evil_village'),
     path('categorias/terror/outlast', outlast, name='outlast'),
     path('categorias/terror/resident_evil', resident_evil, name='resident_evil'),
+
+    # Juegos de accion
+    path('categorias/accion/helldivers', helldivers, name='helldivers'),
+    path('categorias/accion/split_fiction', split_fiction, name='split_fiction'),
+    path('categorias/accion/elden_ring', elden_ring, name='elden_ring'),
 
 ]
