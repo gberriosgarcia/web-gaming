@@ -34,10 +34,12 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{% url 'categorias' %}">Categorías</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#">Juegos</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#">Tiendas</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    {% endif %}
                     <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
-                    <li class="nav-item">
-                        <a href="{% url 'login' %}" class="btn btn-warning ms-2">Login</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -54,12 +56,16 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Tiendas</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
             </ul>
 
             <!-- Barra de búsqueda -->
             <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Buscar...">
-                <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
             </form>
         </div>
     </div>

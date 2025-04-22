@@ -48,10 +48,12 @@
                 <li class="nav-item"><a class="nav-link text-light" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="#">Juegos</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="#">Tiendas</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
                 <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
-                <li class="nav-item">
-                    <a href="{% url 'login' %}" class="btn btn-warning ms-2">Login</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -68,12 +70,16 @@
             <li class="nav-item"><a class="nav-link" href="/">Categorías</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Tiendas</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+            {% endif %}
         </ul>
 
         <!-- Barra de búsqueda -->
         <form class="d-flex mt-3">
             <input class="form-control me-2" type="search" placeholder="Buscar...">
-            <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
         </form>
     </div>
 </div>
@@ -90,12 +96,16 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'categorias' %}">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Tiendas</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
             </ul>
 
             <!-- Barra de búsqueda -->
             <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Buscar...">
-                <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
             </form>
         </div>
     </div>
@@ -108,9 +118,10 @@
                     <h2 class="h3">Inicia Sesión</h2>
                     <h3 class="fs-6 fw-normal text-secondary m-0">Ingresa tus datos</h3>
                 </div>
-                <form action="#!">
+                <form method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
-                        <input type="email" class="form-control" name="email" id="email" onchange="validarVaciosNulos()" required placeholder="E-mail *">
+                        <input type="text" class="form-control" name="username" id="email" onchange="validarVaciosNulos()" required placeholder="Usuario *">
                     </div>
 
                     <div class="mb-3">
@@ -118,7 +129,10 @@
                     </div>
 
 
-                    <button class="btn btn-primary w-100">Iniciar Sesión</button> 
+                    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                    {% if error %}
+                      <p style="color: red;">{{ error }}</p>
+                    {% endif %} 
                 </form>
                 <p class="mt-4 text-center text-secondary">¿No tienes cuenta? <a href="{% url 'registro' %}" class="link-primary text-decoration-none">Registrate</a></p>
                 <p class="mt-4 text-center text-secondary">¿Olvidaste tu contraseña? <a href="{% url 'reinicio_pass' %}" class="link-primary text-decoration-none">Recuperala!</a></p>
