@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass
+from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass, fifa, nba, captain_tsubasa, the_forest, rust, minecraft
 
 
 urlpatterns = [
@@ -51,7 +51,6 @@ urlpatterns = [
     path('categorias/accion/split_fiction', split_fiction, name='split_fiction'),
     path('categorias/accion/elden_ring', elden_ring, name='elden_ring'),
     
-    
     # Juegos de mundo abierto
     path('categorias/mundo_abierto/ark', ark, name='ark'),
     path('categorias/mundo_abierto/gta', gta, name='gta'),
@@ -62,4 +61,13 @@ urlpatterns = [
     path('categorias/carreras/most_wanted', most_wanted, name='most_wanted'),
     path('categorias/carreras/f124', f124, name='f124'),
 
+     # Juegos de deportes
+    path('categorias/deportes/fifa', fifa, name='fifa'),
+    path('categorias/deportes/captain_tsubasa', captain_tsubasa, name='captain_tsubasa'),
+    path('categorias/deportes/nba', nba, name='nba'),
+
+     # Juegos de supervivencia
+    path('categorias/supervivencia/minecraft', minecraft, name='minecraft'),
+    path('categorias/supervivencia/rust', rust, name='rust'),
+    path('categorias/supervivencia/the_forest', the_forest, name='the_forest'),
 ]
