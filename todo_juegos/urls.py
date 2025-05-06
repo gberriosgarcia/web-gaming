@@ -15,10 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass, fifa, nba, captain_tsubasa, the_forest, rust, minecraft
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -70,4 +69,8 @@ urlpatterns = [
     path('categorias/supervivencia/minecraft', minecraft, name='minecraft'),
     path('categorias/supervivencia/rust', rust, name='rust'),
     path('categorias/supervivencia/the_forest', the_forest, name='the_forest'),
+
+     # APIs
+    path('api/', include('rest_api.urls')),
+
 ]
