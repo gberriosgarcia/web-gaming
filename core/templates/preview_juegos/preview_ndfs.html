@@ -38,6 +38,21 @@
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
                 {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
                 <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
             </ul>
         </div>
@@ -60,6 +75,21 @@
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
             {% endif %}
+            {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
         </ul>
 
         <!-- Barra de búsqueda -->
@@ -86,10 +116,12 @@
                     </div>
                     <p>En Need for Speed Heat, los límites de la ley se desvanecen cuando empieza anochecer. Compite por el día en el Speedhunters Showdown: una serie de eventos legales donde ganarás fondos para personalizar tu propia flota de coches. Cuando tu coche derroche estilo, aumenta la intensidad por la noche. Participa en carreras callejeras ilegales con tu banda pero no te confíes, porque hay polis corruptos al acecho. Juégatela, arrasa a tus rivales para aumentar tu REP y arriésgalo todo por la gloria clandestina.</p>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form method="post" action="{% url 'agregar-al-carrito' juego.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary">
+                              Añadir al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

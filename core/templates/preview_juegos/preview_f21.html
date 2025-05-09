@@ -38,6 +38,21 @@
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
                 {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
                 <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
             </ul>
         </div>
@@ -60,6 +75,21 @@
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
             {% endif %}
+            {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
         </ul>
 
         <!-- Barra de búsqueda -->
@@ -86,10 +116,12 @@
                     </div>
                     <p>Sé una de las 20 personas al volante con EA SPORTS™ F1® 24, el videojuego oficial del 2024 FIA Formula One World Championship™. Corónate con la victoria en busca de una carrera profesional en la F1® que defina tu legado, la primera gran actualización a este modo de juego desde 2016. Maneja como las grandes estrellas y siéntete en armonía con el coche gracias al nuevo sistema de EA SPORTS Dynamic Handling. Enciende tu pasión y conecta con tus equipos y pilotos favoritos mientras demuestras que tienes lo necesario para ganar en nuevos modos y experiencias.</p>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form method="post" action="{% url 'agregar-al-carrito' juego.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary">
+                              Añadir al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,21 @@
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
                 {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
                 <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
             </ul>
         </div>
@@ -60,6 +75,21 @@
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
             {% endif %}
+            {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
         </ul>
 
         <!-- Barra de búsqueda -->
@@ -85,10 +115,12 @@
                     </div>
                     <p>Experimenta Grand Theft Auto V, el juego de mundo abierto de Rockstar Games aclamado por la crítica. Cuando un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven involucrados con lo peor y más desquiciado del mundo criminal, del gobierno de los EE. UU. y de la industria del espectáculo, tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad implacable en la que no pueden confiar en nadie; mucho menos los unos en los otros.</p>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form method="post" action="{% url 'agregar-al-carrito' juego.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary">
+                              Añadir al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

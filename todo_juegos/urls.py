@@ -21,7 +21,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass, fifa, nba, captain_tsubasa, the_forest, rust, minecraft
+from core.views import index, registro, login, cerrar_sesion, categorias,carreras, deportes, supervivencia, mundo_abierto, terror, accion, resident_evil_village, outlast, resident_evil, helldivers, split_fiction, elden_ring, ark, gta, monster_hunter,f124,ndfs,most_wanted,reinicio_pass, fifa, nba, captain_tsubasa, the_forest, rust, minecraft, agregar_al_carrito
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -79,4 +79,7 @@ urlpatterns = [
     path('api/token/',   TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # Carrito
+    path('carrito/agregar/<int:juego_id>/', agregar_al_carrito, name='agregar-al-carrito'),
 ]

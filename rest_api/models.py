@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Categoria(models.Model):
     nombre = models.CharField("Nombre de categoría", max_length=100, unique=True)
@@ -38,3 +39,38 @@ class Juego(models.Model):
 
     def __str__(self):
         return f"{self.nombre} ({self.categoria.nombre})"
+
+class Carrito(models.Model):
+    usuario    = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='carrito'
+    )
+    creado_en  = models.DateTimeField(auto_now_add=True)
+    actualizado_en = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'carrito'  
+        verbose_name = 'Carrito'
+        verbose_name_plural = 'Carritos'
+
+    def __str__(self):
+        return f"Carrito de {self.usuario.username}"
+
+class ItemCarrito(models.Model):
+    carrito  = models.ForeignKey(
+        Carrito,
+        on_delete=models.CASCADE,
+        related_name='items'
+    )
+    juego    = models.ForeignKey(Juego, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        db_table = 'item_carrito'
+        verbose_name = 'Ítem de Carrito'
+        verbose_name_plural = 'Ítems de Carrito'
+        unique_together = ('carrito', 'juego')
+
+    def __str__(self):
+        return f"{self.cantidad} × {self.juego.nombre}"

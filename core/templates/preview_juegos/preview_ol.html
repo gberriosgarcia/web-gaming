@@ -39,6 +39,21 @@
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
                     {% endif %}
+                    {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
                     <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
                 </ul>
             </div>
@@ -60,6 +75,21 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
                 {% endif %}
             </ul>
 
@@ -87,10 +117,12 @@
                     </div>
                     <p>Outlast es un videojuego de terror y supervivencia en primera persona desarrollado por Red Barrels. El juego gira en torno a un periodista de investigación independiente, Miles Upshur, que decide investigar un remoto hospital psiquiátrico llamado Mount Massive Asylum, ubicado en lo profundo de las montañas del condado de Lake, Colorado. El contenido descargable Outlast: Whistleblower se centra en Waylon Park, un ingeniero de sistemas informáticos que trabajaba para dicho psiquiátrico, es el hombre que llevó a Miles Upshur al manicomio ya que le comentaba las atrocidades llevadas a cabo con los pacientes.</p>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form method="post" action="{% url 'agregar-al-carrito' juego.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary">
+                              Añadir al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

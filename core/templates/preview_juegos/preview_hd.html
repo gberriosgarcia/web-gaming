@@ -39,6 +39,21 @@
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
                     {% endif %}
+                    {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
                     <li class="nav-item"><input class="form-control me-2" type="search" placeholder="Buscar..."></li>
                 </ul>
             </div>
@@ -60,6 +75,21 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item position-relative">
+                  <a class="nav-link text-light" href="{% url 'carrito-detail' %}">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    {% if carrito_count > 0 %}
+                    <span 
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      title="{{ carrito_count }} artículos en el carrito">
+                      {{ carrito_count }}
+                      <span class="visually-hidden">artículos en carrito</span>
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
                 {% endif %}
             </ul>
 
@@ -87,10 +117,12 @@
                     </div>
                     <p>Helldivers es un juego de disparos de perspectiva cenital desarrollado por Arrowhead Game Studios y publicado por Sony Computer Entertainment. El juego fue lanzado para PlayStation 3, PlayStation 4 y PlayStation Vita con cross-play, el 3 de marzo de 2015 en Norteamérica y el 4 de marzo de 2015 en Europa, respectivamente. También se lanzó una versión para Microsoft Windows a través de Steam el 7 de diciembre de 2015, convirtiéndose en el primer juego que Sony lanzó en PC. Cuenta con cooperativo de sofá y online, hasta cuatro jugadores. Helldivers se inspira en la ciencia ficción militar como Aliens y Starship Troopers. Aunque es posible jugar en solitario, a menudo resulta beneficioso hacerlo en cooperativo, ya que permite a los jugadores distribuir los requisitos de forma eficaz. Sin embargo, esto conlleva sus propios riesgos, sobre todo el fuego amigo.</p>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form method="post" action="{% url 'agregar-al-carrito' juego.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary">
+                              Añadir al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

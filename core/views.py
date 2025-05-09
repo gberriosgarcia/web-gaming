@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as login_user, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from rest_api.models import Carrito, ItemCarrito, Juego
 
 def index(request):
     return render(request, 'index.html')
@@ -88,82 +89,122 @@ def reinicio_pass(request):
 
 @login_required(login_url='login')
 def resident_evil_village(request):
-    return render(request, 'preview_juegos/preview_rv.html')
+    juego = get_object_or_404(Juego, nombre="Resident Evil Village")
+    return render(request, 'preview_juegos/preview_rv.html', {'juego': juego})
 
 @login_required(login_url='login')
 def outlast(request):
-    return render(request, 'preview_juegos/preview_ol.html')
+    juego = get_object_or_404(Juego, nombre="Outlast")
+    return render(request, 'preview_juegos/preview_ol.html', {'juego': juego})
 
 @login_required(login_url='login')
 def resident_evil(request):
-    return render(request, 'preview_juegos/preview_rev6.html')
+    juego = get_object_or_404(Juego, nombre="Resident Evil 6")
+    return render(request, 'preview_juegos/preview_rev6.html', {'juego': juego})
 
-# Juegos de accion
+
+# Juegos de Acción
 
 @login_required(login_url='login')
 def helldivers(request):
-    return render(request, 'preview_juegos/preview_hd.html')
+    juego = get_object_or_404(Juego, nombre="Helldivers II")
+    return render(request, 'preview_juegos/preview_hd.html', {'juego': juego})
 
 @login_required(login_url='login')
 def split_fiction(request):
-    return render(request, 'preview_juegos/preview_sf.html')
+    juego = get_object_or_404(Juego, nombre="Split Fiction")
+    return render(request, 'preview_juegos/preview_sf.html', {'juego': juego})
 
 @login_required(login_url='login')
 def elden_ring(request):
-    return render(request, 'preview_juegos/preview_er.html')
+    juego = get_object_or_404(Juego, nombre="Elden Ring")
+    return render(request, 'preview_juegos/preview_er.html', {'juego': juego})
 
-# Juegos de mundo abierto
+
+# Juegos de Mundo Abierto
 
 @login_required(login_url='login')
 def ark(request):
-    return render(request, 'preview_juegos/preview_ark.html')
+    juego = get_object_or_404(Juego, nombre="ARK Ascended")
+    return render(request, 'preview_juegos/preview_ark.html', {'juego': juego})
 
 @login_required(login_url='login')
 def gta(request):
-    return render(request, 'preview_juegos/preview_gta.html')
+    juego = get_object_or_404(Juego, nombre="GTA V")
+    return render(request, 'preview_juegos/preview_gta.html', {'juego': juego})
 
 @login_required(login_url='login')
 def monster_hunter(request):
-    return render(request, 'preview_juegos/preview_mh.html')
+    juego = get_object_or_404(Juego, nombre="Monster Hunter Wild")
+    return render(request, 'preview_juegos/preview_mh.html', {'juego': juego})
 
-# Juegos de carreras
+
+# Juegos de Carreras
 
 @login_required(login_url='login')
 def ndfs(request):
-    return render(request, 'preview_juegos/preview_ndfs.html')
+    juego = get_object_or_404(Juego, nombre="Need for Speed Heat")
+    return render(request, 'preview_juegos/preview_ndfs.html', {'juego': juego})
 
 @login_required(login_url='login')
 def most_wanted(request):
-    return render(request, 'preview_juegos/preview_nfsmw.html')
+    juego = get_object_or_404(Juego, nombre="Need for Speed Most Wanted")
+    return render(request, 'preview_juegos/preview_nfsmw.html', {'juego': juego})
 
 @login_required(login_url='login')
 def f124(request):
-    return render(request, 'preview_juegos/preview_f21.html')
+    juego = get_object_or_404(Juego, nombre="F1®24")
+    return render(request, 'preview_juegos/preview_f21.html', {'juego': juego})
 
-# Juegos de deportes
+
+# Juegos de Deportes
 
 @login_required(login_url='login')
 def fifa(request):
-    return render(request, 'preview_juegos/preview_futb.html')
+    juego = get_object_or_404(Juego, nombre="FIFA 2022")
+    return render(request, 'preview_juegos/preview_futb.html', {'juego': juego})
 
 @login_required(login_url='login')
 def captain_tsubasa(request):
-    return render(request, 'preview_juegos/preview_tsubasa.html')
+    juego = get_object_or_404(Juego, nombre="Captain Tsubasa")
+    return render(request, 'preview_juegos/preview_tsubasa.html', {'juego': juego})
 
 @login_required(login_url='login')
 def nba(request):
-    return render(request, 'preview_juegos/preview_nba.html')
+    juego = get_object_or_404(Juego, nombre="NBA 2K24")
+    return render(request, 'preview_juegos/preview_nba.html', {'juego': juego})
 
-# Juegos de supervivencia
+
+# Juegos de Supervivencia
 
 @login_required(login_url='login')
 def minecraft(request):
-    return render(request, 'preview_juegos/preview_minecraft.html')
+    juego = get_object_or_404(Juego, nombre="Minecraft")
+    return render(request, 'preview_juegos/preview_minecraft.html', {'juego': juego})
 
 @login_required(login_url='login')
 def rust(request):
-    return render(request, 'preview_juegos/preview_rust.html')
+    juego = get_object_or_404(Juego, nombre="Rust")
+    return render(request, 'preview_juegos/preview_rust.html', {'juego': juego})
 
 @login_required(login_url='login')
 def the_forest(request):
-    return render(request, 'preview_juegos/preview_forest.html')
+    juego = get_object_or_404(Juego, nombre="The Forest")
+    return render(request, 'preview_juegos/preview_forest.html', {'juego': juego})
+
+# Carrito de compras
+@login_required
+def agregar_al_carrito(request, juego_id):
+    carrito, _ = Carrito.objects.get_or_create(usuario=request.user)
+    juego = get_object_or_404(Juego, pk=juego_id)
+
+    item, creado = ItemCarrito.objects.get_or_create(
+        carrito=carrito,
+        juego=juego,
+        defaults={'cantidad': 1}
+    )
+    if not creado:
+        item.cantidad += 1
+        item.save()
+
+    return redirect(request.META.get('HTTP_REFERER', '/'))
