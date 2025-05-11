@@ -1,4 +1,4 @@
-describe REST_API_CATEGORIA
+-- describe REST_API_CATEGORIA
 
 INSERT INTO REST_API_CATEGORIA (nombre) VALUES ('Terror');
 INSERT INTO REST_API_CATEGORIA (nombre) VALUES ('Deportes');
@@ -7,11 +7,11 @@ INSERT INTO REST_API_CATEGORIA (nombre) VALUES ('Supervivencia');
 INSERT INTO REST_API_CATEGORIA (nombre) VALUES ('Carreras');
 INSERT INTO REST_API_CATEGORIA (nombre) VALUES ('Mundo Abierto');
 
-select * from REST_API_CATEGORIA
+-- select * from REST_API_CATEGORIA
 
-describe REST_API_JUEGO
+-- describe REST_API_JUEGO
 
-TRUNCATE TABLE REST_API_JUEGO;
+--TRUNCATE TABLE REST_API_JUEGO;
 
 
 INSERT INTO REST_API_JUEGO (
@@ -158,6 +158,6 @@ INSERT INTO REST_API_JUEGO (
   'img/ndfs.jpg'
 );
 
-commit;
+--commit;
 
-select * from REST_API_JUEGO
+--select * from REST_API_JUEGO

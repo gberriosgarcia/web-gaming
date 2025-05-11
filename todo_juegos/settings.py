@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
+STEAM_API_KEY = os.getenv("STEAM_API_KEY")
+BD_USER = os.getenv("BD_USER")
+BD_PASS = os.getenv("BD_PASS")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +30,7 @@ SECRET_KEY = 'django-insecure-8jc^@t*xxz56vx%$^k*^hmk59-v)%78yga2gbunom6*q$lu#km
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
@@ -55,6 +60,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,18 +93,23 @@ WSGI_APPLICATION = 'todo_juegos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': BASE_DIR / 'db.sqlite3',
-         'ENGINE': 'django.db.backends.oracle',
-         'NAME': 'bdcloud_high', # MODIFICAR         
-         'USER': 'todojuegos_user', # AGREGA TU USER Y PASS
-         'PASSWORD': 'TodoJuegosUserDB1234', # AGREGA TU USER Y PASS
-         'HOST': '',
-         'PORT': '',
-     }
- }
+    'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+}
+
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.sqlite3',
+#          'NAME': BASE_DIR / 'db.sqlite3',
+#          'ENGINE': 'django.db.backends.oracle',
+#          'NAME': 'bdcloud_high',        
+#          'USER': BD_USER,
+#          'PASSWORD': BD_PASS,
+#          'HOST': '',
+#          'PORT': '',
+#      }
+#  }
 
 
 # Password validation
@@ -119,6 +130,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -131,18 +147,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+WHITENOISE_USE_FINDERS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'core/static']
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
-
-STEAM_API_KEY = os.getenv("STEAM_API_KEY")
-# E96C6F85C89536D8023DE6EEC5676F98

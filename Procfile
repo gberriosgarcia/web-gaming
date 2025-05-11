@@ -1,0 +1,1 @@
+web: gunicorn todo_juegos.wsgi --log-file -
