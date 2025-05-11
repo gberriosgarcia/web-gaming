@@ -16,6 +16,7 @@ import os
 STEAM_API_KEY = os.getenv("STEAM_API_KEY")
 BD_USER = os.getenv("BD_USER")
 BD_PASS = os.getenv("BD_PASS")
+DJANGO_KEY= os.getenv("DJANGO_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8jc^@t*xxz56vx%$^k*^hmk59-v)%78yga2gbunom6*q$lu#km'
+SECRET_KEY = DJANGO_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
